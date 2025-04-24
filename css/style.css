@@ -1,17 +1,17 @@
-/* ======= CSS Reset ======= */
+/*Created variables for mantaining the design consistency overall in th3e project */
 :root {
-    /* Primary color palette - warm, earthy tones */
-    --primary-dark: #3a2618;    /* Dark brown */
-    --primary: #6b4423;         /* Medium brown */
-    --primary-light: #a67c52;   /* Light brown */
-    --accent: #d4a24e;          /* Gold accent */
-    --text-dark: #2d2d2d;       /* Near black for text */
-    --text-light: #f8f5f1;      /* Off-white for text on dark backgrounds */
-    --background: #f8f5f1;      /* Off-white background */
-    --background-alt: #e8e1d9;  /* Slightly darker background for contrast */
-    --error: #b54b3c;           /* Reddish brown for errors */
+    /* Clor them,e*/
+    --primary-dark: #3a2618;    
+    --primary: #6b4423;         
+    --primary-light: #a67c52;   
+    --accent: #d4a24e;          
+    --text-dark: #2d2d2d;       
+    --text-light: #f8f5f1;      
+    --background: #f8f5f1;      
+    --background-alt: #e8e1d9; 
+    --error: #b54b3c;           
     
-    /* Typography */
+    /* Font Variables */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Raleway', sans-serif;
     
@@ -21,7 +21,7 @@
     --spacing-md: 2rem;
     --spacing-lg: 4rem;
     
-    /* Other */
+    /* Miscellaneous */
     --border-radius: 4px;
     --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
@@ -45,7 +45,7 @@ body {
     line-height: 1.6;
 }
 
-/* Container for consistent width and padding */
+/* Container style */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -53,7 +53,7 @@ body {
     padding: 0 var(--spacing-sm);
 }
 
-/* Typography */
+/* Headingss styles */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 700;
@@ -138,7 +138,7 @@ a:hover {
     color: var(--text-light);
 }
 
-/* ======= Header & Navigation ======= */
+/*  Header & NavBar Styles  */
 header {
     background-color: var(--background);
     box-shadow: var(--box-shadow);
@@ -220,7 +220,7 @@ nav a.active {
     transition: var(--transition);
 }
 
-/* ======= Hero Section ======= */
+/* Herro Section */
 .hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero-bg.jpg');
     background-size: cover;
@@ -249,7 +249,7 @@ nav a.active {
     margin-bottom: var(--spacing-md);
 }
 
-/* ======= Featured Products ======= */
+/*  Featured Products Card and Grid styles  */
 .featured {
     padding: var(--spacing-lg) 0;
 }
@@ -293,7 +293,7 @@ nav a.active {
     margin-bottom: var(--spacing-sm);
 }
 
-/* ======= Testimonials ======= */
+/*  Testimonials  */
 .testimonials {
     background-color: var(--background-alt);
     padding: var(--spacing-lg) 0;
@@ -326,7 +326,7 @@ nav a.active {
     color: var(--primary);
 }
 
-/* ======= Info Section ======= */
+/*  Info Section  */
 .info-section {
     padding: var(--spacing-lg) 0;
 }
@@ -351,7 +351,7 @@ nav a.active {
     text-align: right;
 }
 
-/* ======= Newsletter ======= */
+/*  Newsletter  */
 .newsletter {
     background-color: var(--primary-dark);
     color: var(--text-light);
@@ -381,7 +381,7 @@ nav a.active {
     border-radius: var(--border-radius);
 }
 
-/* ======= Footer ======= */
+/*  Footer  */
 footer {
     background-color: var(--primary);
     color: var(--text-light);
@@ -448,7 +448,7 @@ footer {
     gap: var(--spacing-sm);
 }
 
-/* ======= Back to Top Button ======= */
+/*  Top Button */
 #back-to-top {
     position: fixed;
     bottom: 30px;
@@ -479,7 +479,7 @@ footer {
     transform: translateY(-5px);
 }
 
-/* ======= Page Header ======= */
+/* aDDITIONAL Page Header  */
 .page-header {
     background-color: var(--primary-dark);
     color: var(--text-light);
@@ -487,7 +487,7 @@ footer {
     text-align: center;
 }
 
-/* ======= Contact Page ======= */
+                                                                        /*  Contact Page  */
 .contact-section {
     padding: var(--spacing-lg) 0;
 }
@@ -581,7 +581,7 @@ small {
     color: #666;
 }
 
-/* ======= Menu Page Styles ======= */
+                                                                    /*  Menu Page */
 .menu-nav {
     background-color: var(--background-alt);
     padding: var(--spacing-sm) 0;
@@ -738,7 +738,7 @@ small {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* ======= About Page Styles ======= */
+                                                                    /*  About Page */
 .story-section, .coffee-sourcing {
     padding: var(--spacing-lg) 0;
 }
@@ -765,7 +765,7 @@ small {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;  /* Focus on the top portion (faces) */
+    object-position: center top;  
     transition: transform 0.5s ease;
 }
 
@@ -829,38 +829,38 @@ small {
     max-height: 350px;  
     overflow: hidden;
     position: relative;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;  /* Round only top corners */
+    border-radius: var(--border-radius) var(--border-radius) 0 0;  
 }
 
 .team-photo img {
     width: 100%;
-    display: block;  /* Ensures no extra space below image */
+    display: block;  
     object-fit: cover;
     object-position: center 15%;  
     aspect-ratio: 1 / 1;  
 }
 
-/* Team member card styling */
+/* Team member card */
 .team-member {
     background-color: white;
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--box-shadow);
     transition: var(--transition);
-    height: 100%;  /* Make all cards the same height */
+    height: 100%; 
     display: flex;
     flex-direction: column;
 }
 
 .team-content {
     padding: var(--spacing-md);
-    flex-grow: 1;  /* Allow content area to expand */
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
 }
 
 .team-member h4 {
-    margin-top: 0;  /* Remove top margin */
+    margin-top: 0;  
     margin-bottom: 5px;
     color: var(--primary-dark);
     font-size: 1.3rem;
@@ -875,7 +875,7 @@ small {
 }
 
 .team-member p {
-    margin-bottom: 0;  /* Remove bottom margin */
+    margin-bottom: 0;  
     color: var(--text-dark);
     font-size: 0.95rem;
     line-height: 1.6;
@@ -887,7 +887,7 @@ small {
     gap: var(--spacing-md);
 }
 
-/* Responsive adjustments */
+                                                            /* Responsive adjustments */
 @media (max-width: 768px) {
     .team-photo {
         max-height: 300px;
@@ -1014,7 +1014,75 @@ small {
     margin-bottom: var(--spacing-xs);
 }
 
-/* Responsive styles for menu and about pages */
+                                                                /*  Welcome Screen */
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease-out;
+}
+
+.welcome-content {
+    text-align: center;
+    color: var(--text-light);
+    max-width: 600px;
+    padding: var(--spacing-md);
+}
+
+.welcome-logo {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-heading);
+    color: var(--accent);
+}
+
+.welcome-message {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+.welcome-btn {
+    background-color: var(--accent);
+    color: var(--primary-dark);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.welcome-btn:hover {
+    background-color: var(--text-light);
+    transform: translateY(-3px);
+}
+
+.welcome-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.welcome-overlay {
+    animation: fadeIn 1.5s ease-in-out;
+}
+/* Responsive styles */
 @media (max-width: 992px) {
     .story-content, .sourcing-content {
         grid-template-columns: 1fr;
@@ -1065,7 +1133,7 @@ small {
     }
 }
 
-/* ======= Responsive Styles ======= */
+/*  Responsivenwss */
 @media (max-width: 992px) {
     .contact-grid {
         grid-template-columns: 1fr;
