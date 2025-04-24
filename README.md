@@ -1,6 +1,6 @@
 ChaiBethak - Restaurant Website
 
-This repository contains our submission for Assignment 2 of the CS343 – Web Technologies course, submitted to Miss Naeema Asif.
+- This repository contains our submission for Assignment 2 of the CS343 – Web Technologies course, submitted to Miss Naeema Asif.
 
 Group Members
 
@@ -14,5 +14,5 @@ Therefore, we built this sample website from the ground up, adhering to the assi
 
 Page Contributions:
 - Arham Ali worked on the index.html (Home) and menu.html pages and CSS styling.
-Muhammad Ahmad completed the remaining pages and handled most of the JavaScript.
+- Muhammad Ahmad completed the remaining pages and handled most of the JavaScript.
 
