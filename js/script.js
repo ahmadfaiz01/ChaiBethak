@@ -1,18 +1,3 @@
-/**
- * Brew Haven - Main JavaScript
- * Author: [Your Name]
- * Created: [Current Date]
- * 
- * This script handles all interactive elements of the Brew Haven website including:
- * - Welcome message
- * - Form validation
- * - Back to top button
- * - Toggle content display
- * - Current date and time in footer
- * - Mobile menu toggle
- */
-
-// Wait for DOM to be fully loaded before executing code
 document.addEventListener('DOMContentLoaded', function() {
     // Display welcome message
     showWelcomeMessage();
@@ -33,48 +18,65 @@ document.addEventListener('DOMContentLoaded', function() {
     initFormValidation();
 });
 
-/**
- * Shows a welcome message to first-time visitors
- * Uses localStorage to avoid showing the message on every visit
- */
 function showWelcomeMessage() {
-    // Check if this is the first visit
-    if (!localStorage.getItem('hasVisitedBefore')) {
-        // Show welcome message after a short delay
+    // Check sessionStorage to see if welcome was shown in this session
+    if (!sessionStorage.getItem('welcomeShown')) {
+        // Create welcome overlay
+        const welcomeOverlay = document.createElement('div');
+        welcomeOverlay.className = 'welcome-overlay';
+        welcomeOverlay.innerHTML = `
+            <div class="welcome-content">
+                <div class="welcome-logo">Welcome to</div>
+                <div class="welcome-logo">Chaii Bethak</div>
+                <p class="welcome-message">Experience the authentic taste of Pakistan's traditional tea culture</p>
+                <button class="welcome-btn">Enter Tea House</button>
+            </div>
+        `;
+        
+        document.body.insertBefore(welcomeOverlay, document.body.firstChild);
+        
+        const welcomeBtn = document.querySelector('.welcome-btn');
+        welcomeBtn.addEventListener('click', function() {
+            welcomeOverlay.classList.add('welcome-hidden');
+            
+            setTimeout(() => {
+                welcomeOverlay.remove();
+                // Mark as shown for this session
+                sessionStorage.setItem('welcomeShown', 'true');
+                
+                // Show first visit banner if needed
+                if (!localStorage.getItem('hasVisitedBefore')) {
+                    showFirstVisitBanner();
+                    localStorage.setItem('hasVisitedBefore', 'true');
+                }
+            }, 1000);
+        });
+
+        // Auto-close after 5 seconds
         setTimeout(() => {
-            alert('Welcome to Brew Haven! Explore our artisan coffee selection and discover your new favorite brew.');
-            // Set flag in localStorage
-            localStorage.setItem('hasVisitedBefore', 'true');
-        }, 1000);
+            if (document.contains(welcomeOverlay)) {
+                welcomeOverlay.classList.add('welcome-hidden');
+                setTimeout(() => {
+                    if (document.contains(welcomeOverlay)) {
+                        welcomeOverlay.remove();
+                        sessionStorage.setItem('welcomeShown', 'true');
+                        
+                        if (!localStorage.getItem('hasVisitedBefore')) {
+                            showFirstVisitBanner();
+                            localStorage.setItem('hasVisitedBefore', 'true');
+                        }
+                    }
+                }, 1000);
+            }
+        }, 5000);
+    }
+    // Show first visit banner if needed (even if welcome was shown)
+    else if (!localStorage.getItem('hasVisitedBefore')) {
+        showFirstVisitBanner();
+        localStorage.setItem('hasVisitedBefore', 'true');
     }
 }
 
-/**
- * Initializes the back to top button functionality
- * Button appears when user scrolls down and scrolls to top when clicked
- */
-function initBackToTopButton() {
-    const backToTopButton = document.getElementById('back-to-top');
-    
-    if (!backToTopButton) return;
-    
-    // Show button when user scrolls down 300px from the top
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('visible');
-        } else {
-            backToTopButton.classList.remove('visible');
-        }
-    });
-    
-    // Scroll to top when button is clicked
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
 
 /**
  * Initializes the show more/less functionality for testimonials
@@ -103,9 +105,8 @@ function initShowMoreButton() {
     });
 }
 
-/**
- * Displays the current date and time in the footer
- * Updates every minute to keep time current
+/*
+ Displays the current date and time in the footer and Updates every minute to keep time current
  */
 function displayCurrentDate() {
     const currentDateElement = document.getElementById('current-date');
@@ -131,8 +132,8 @@ function displayCurrentDate() {
     setInterval(updateDateTime, 60000);
 }
 
-/**
- * Initializes the mobile menu toggle functionality
+/*
+  Initializes the mobile menu toggle functionality
  */
 function initMobileMenu() {
     const menuToggle = document.querySelector('.mobile-menu-toggle');
@@ -151,9 +152,7 @@ function initMobileMenu() {
     });
 }
 
-/**
- * Validates form inputs before submission
- */
+/* Validates form inputs before submission */
 function initFormValidation() {
     // Newsletter form validation
     const newsletterForm = document.getElementById('newsletter-form');
@@ -168,10 +167,7 @@ function initFormValidation() {
     }
 }
 
-/**
- * Validates the newsletter form
- * @param {Event} event - The form submission event
- */
+/* Validates the newsletter form */
 function validateNewsletterForm(event) {
     event.preventDefault();
     
@@ -192,10 +188,7 @@ function validateNewsletterForm(event) {
     event.target.reset();
 }
 
-/**
- * Validates the contact form
- * @param {Event} event - The form submission event
- */
+/* Validates the contact form */
 function validateContactForm(event) {
     event.preventDefault();
     
@@ -246,7 +239,7 @@ function validateContactForm(event) {
         isValid = false;
     }
     
-    // Validate message (required, at least 10 characters)
+    // Validate message (at least 10 characters)
     if (messageInput.value.trim().length < 10) {
         messageError.textContent = 'Please enter a message (at least 10 characters)';
         isValid = false;
@@ -259,11 +252,7 @@ function validateContactForm(event) {
     }
 }
 
-/**
- * Validates an email address format
- * @param {string} email - The email address to validate
- * @returns {boolean} - Whether the email is valid
- */
+/*Validates an email address format*/
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
