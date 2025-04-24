@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaii Bethak - Traditional Pakistani Tea House</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Google Fonts - Using a mix of fonts for a more custom feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Chaii Bethak</h1>
+                <p class="tagline">چائے بیٹھک</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Brewing Traditions, <br>Serving Memories</h2>
+                <p>Authentic Pakistani chai and cultural experience</p>
+                <a href="menu.html" class="btn">Explore Our Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured products section -->
+    <section class="featured">
+        <div class="container">
+            <h2 class="section-title">Our Specialties</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="images/chai1.jpg" alt="Doodh Patti">
+                    <h3>Doodh Patti</h3>
+                    <p>Our signature milk tea with cardamom and a perfect blend of spices.</p>
+                    <p class="price">Rs. 120</p>
+                </div>
+                <div class="product-card">
+                    <img src="images/chai2.jpg" alt="Kashmiri Chai">
+                    <h3>Kashmiri Chai</h3>
+                    <p>Pink tea with pistachios, almonds and a hint of salt.</p>
+                    <p class="price">Rs. 180</p>
+                </div>
+                <div class="product-card">
+                    <img src="images/chai3.jpg" alt="Karak Chai">
+                    <h3>Karak Chai</h3>
+                    <p>Strong, aromatic tea with a rich blend of spices and milk.</p>
+                    <p class="price">Rs. 150</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials section with toggle functionality -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <p>"بہترین چائے! The atmosphere is so welcoming and the chai reminds me of my grandmother's recipe. Perfect place to meet friends!"</p>
+                    <p class="author">— Sara A.</p>
+                </div>
+                <div class="testimonial hidden">
+                    <p>"Their samosas and chai combination is unbeatable. I come here every weekend with my family. Mashallah, great service!"</p>
+                    <p class="author">— Ahmed K.</p>
+                </div>
+                <div class="testimonial hidden">
+                    <p>"As a chai enthusiast, I appreciate their attention to authentic flavors. The cultural ambiance makes it even more special."</p>
+                    <p class="author">— Fatima R.</p>
+                </div>
+            </div>
+            <button id="show-more" class="btn-secondary">Show More</button>
+        </div>
+    </section>
+
+    <!-- Hours and location -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="hours">
+                    <h3>Hours</h3>
+                    <table>
+                        <tr>
+                            <td>Monday - Friday</td>
+                            <td>11:00am - 11:00pm</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>10:00am - 12:00am</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>12:00pm - 10:00pm</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="location">
+                    <h3>Find Us</h3>
+                    <address>
+                        42 Jinnah Avenue<br>
+                        F-7, Islamabad 44000<br>
+                        <a href="tel:+923005551234">+92 300 555 1234</a><br>
+                        <a href="mailto:hello@chaiibethak.com">hello@chaiibethak.com</a>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter signup -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Join Our Community</h2>
+            <p>Sign up for our newsletter to receive updates on events, new menu items, and exclusive offers.</p>
+            <form id="newsletter-form">
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your email address" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Chaii Bethak</h2>
+                    <p>چائے بیٹھک</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook">FB</a>
+                        <a href="#" aria-label="Instagram">IG</a>
+                        <a href="#" aria-label="Twitter">TW</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Chaii Bethak. All rights reserved.</p>
+                <p id="current-date">Current Date</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
